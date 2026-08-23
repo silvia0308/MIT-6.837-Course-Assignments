@@ -1,0 +1,47 @@
+# ---- Visual Studio / MSVC (native C++) ----
+
+# 用户与 workspace 配置（含个人信息，必须忽略）
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# IntelliSense 与预编译头缓存
+*.VC.db
+*.VC.VC.opendb
+*.ipch
+ipch/
+*.aps
+
+# 编译中间产物与链接/调试产物（按扩展名忽略，任意目录生效；*.exe 不忽略 → 保留可执行文件）
+*.obj
+*.o
+*.res
+*.rsp
+*.idb
+*.pdb
+*.ilk
+*.lib
+*.exp
+*.manifest
+*.lastbuildstate
+*.tlog
+*.log
+*.recipe
+*.vcxproj.FileListAbsolute.txt
+*.Build.CppClean.log
+unsuccessfulbuild
+
+# NuGet
+packages/
+*.nupkg
+
+# 编辑器/系统
+.vscode/
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# 源码管理残留
+*.scc
