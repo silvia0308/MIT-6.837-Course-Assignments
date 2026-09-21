@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
     sprintf(full_input, "%s%s", input_dir_prefix, input_file);
     sprintf(full_output, "%s%s", output_dir_prefix, output_file);
 
-    srand((unsigned)time(NULL));
+    srand((unsigned)time(NULL)); // 给随机数生成器设置随机种子，让每次程序运行时产生的随机数序列不同
 
     IFS ifs;
     ifs.Read(full_input);
