@@ -20,8 +20,9 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
-    <ProjectGuid>{809119D6-2583-438C-AD1E-5DC27D027343}</ProjectGuid>
+    <ProjectGuid>{2652FCB9-42BD-4E9B-B433-52121F61182E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -64,15 +65,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>ifs</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>ifs</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>ifs</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <TargetName>ifs</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -110,56 +115,32 @@
     <ClCompile>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>Level3</WarningLevel>
+      <CompileAs>CompileAsCpp</CompileAs>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <OutputFile>$(OutDir)\ifs.exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="group.cpp" />
-    <ClCompile Include="image.C" />
-    <ClCompile Include="matrix.C" />
-    <ClCompile Include="orthographic_camera.cpp" />
-    <ClCompile Include="scene_parser.C" />
-    <ClCompile Include="sphere.cpp" />
+    <ClCompile Include="..\IFS.cpp" />
+    <ClCompile Include="..\image.C" />
+    <ClCompile Include="..\main.cpp">
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsCpp</CompileAs>
+    </ClCompile>
+    <ClCompile Include="..\matrix.C" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="camera.h" />
-    <ClInclude Include="group.h" />
-    <ClInclude Include="hit.h" />
-    <ClInclude Include="image.h" />
-    <ClInclude Include="light.h" />
-    <ClInclude Include="material.h" />
-    <ClInclude Include="matrix.h" />
-    <ClInclude Include="object3d.h" />
-    <ClInclude Include="ray.h" />
-    <ClInclude Include="scene_parser.h" />
-    <ClInclude Include="sphere.h" />
-    <ClInclude Include="vectors.h" />
+    <Text Include="..\parse_code.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="inputs\scene2_01_diffuse.txt" />
-    <Text Include="inputs\scene2_02_ambient.txt" />
-    <Text Include="inputs\scene2_03_colored_lights.txt" />
-    <Text Include="inputs\scene2_04_perspective.txt" />
-    <Text Include="inputs\scene2_05_inside_sphere.txt" />
-    <Text Include="inputs\scene2_06_plane.txt" />
-    <Text Include="inputs\scene2_07_sphere_triangles.txt" />
-    <Text Include="inputs\scene2_08_cube.txt" />
-    <Text Include="inputs\scene2_09_bunny_200.txt" />
-    <Text Include="inputs\scene2_10_bunny_1k.txt" />
-    <Text Include="inputs\scene2_11_squashed_sphere.txt" />
-    <Text Include="inputs\scene2_12_rotated_sphere.txt" />
-    <Text Include="inputs\scene2_13_rotated_squashed_sphere.txt" />
-    <Text Include="inputs\scene2_14_axes_cube.txt" />
-    <Text Include="inputs\scene2_15_crazy_transforms.txt" />
-    <Text Include="inputs\scene2_16_t_scale.txt" />
-    <Text Include="meshes\bunny_1k.obj.txt" />
-    <Text Include="meshes\bunny_200.obj.txt" />
-    <Text Include="meshes\cube.obj.txt" />
+    <ClInclude Include="..\IFS.h" />
+    <ClInclude Include="..\image.h" />
+    <ClInclude Include="..\matrix.h" />
+    <ClInclude Include="..\vectors.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
