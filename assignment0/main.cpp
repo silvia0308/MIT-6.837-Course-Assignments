@@ -16,10 +16,8 @@ int main(int argc, char* argv[])
     int   size = 100;
     char* output_file = NULL;
 
-    // 输入目录前缀（inputs 子文件夹）
-    const char* input_dir_prefix = "../inputs/";
-    // 输出目录前缀（outputs 子文件夹）
-    const char* output_dir_prefix = "../outputs/";
+    const char* input_dir_prefix = "../../inputs/";
+    const char* output_dir_prefix = "../../outputs/";
 
     for (int i = 1; i < argc; i++)
     {

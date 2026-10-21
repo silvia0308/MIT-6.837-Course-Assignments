@@ -18,7 +18,7 @@
     <ClCompile Include="..\group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\orthographic_camera.cpp">
+    <ClCompile Include="..\camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\sphere.cpp">
@@ -31,6 +31,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\scene_parser.C">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\triangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\transform.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,26 +83,17 @@
     <ClInclude Include="..\vectors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\inputs\scene2_01_diffuse.txt" />
-    <Text Include="..\inputs\scene2_02_ambient.txt" />
-    <Text Include="..\inputs\scene2_03_colored_lights.txt" />
-    <Text Include="..\inputs\scene2_04_perspective.txt" />
-    <Text Include="..\inputs\scene2_05_inside_sphere.txt" />
-    <Text Include="..\inputs\scene2_06_plane.txt" />
-    <Text Include="..\inputs\scene2_07_sphere_triangles.txt" />
-    <Text Include="..\inputs\scene2_08_cube.txt" />
-    <Text Include="..\inputs\scene2_09_bunny_200.txt" />
-    <Text Include="..\inputs\scene2_10_bunny_1k.txt" />
-    <Text Include="..\inputs\scene2_11_squashed_sphere.txt" />
-    <Text Include="..\inputs\scene2_12_rotated_sphere.txt" />
-    <Text Include="..\inputs\scene2_13_rotated_squashed_sphere.txt" />
-    <Text Include="..\inputs\scene2_14_axes_cube.txt" />
-    <Text Include="..\inputs\scene2_15_crazy_transforms.txt" />
-    <Text Include="..\inputs\scene2_16_t_scale.txt" />
-    <Text Include="..\meshes\bunny_1k.obj.txt" />
-    <Text Include="..\meshes\bunny_200.obj.txt" />
-    <Text Include="..\meshes\cube.obj.txt" />
+    <Text Include="..\parse_code.txt" />
   </ItemGroup>
 </Project>

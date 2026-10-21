@@ -13,7 +13,7 @@
 #include "triangle.h"
 #include "transform.h"
 
-#define DegreesToRadians(x) ((M_PI * x) / 180.0f)
+#define DegreesToRadians(x) ((3.14159265358979323846f * (x)) / 180.0f)
 
 // ====================================================================
 // ====================================================================
@@ -34,6 +34,7 @@ SceneParser::SceneParser(const char* filename) {
 
   // parse the file
   assert(filename != NULL);
+  scene_filename = filename;
   const char *ext = &filename[strlen(filename)-4];
   assert(!strcmp(ext,".txt"));
   file = fopen(filename,"r");
@@ -159,7 +160,7 @@ void SceneParser::parseLights() {
   // read in the number of objects
   getToken(token); assert (!strcmp(token, "numLights"));
   num_lights = readInt();
-  lights = new (Light*)[num_lights];
+  lights = new Light*[num_lights];
   // read in the objects
   int count = 0;
   while (num_lights > count) {
@@ -354,8 +355,18 @@ Group* SceneParser::parseTriangleMesh() {
   getToken(token); assert (!strcmp(token, "}"));
   const char *ext = &filename[strlen(filename)-4];
   assert(!strcmp(ext,".obj"));
+  // Mesh files live beside the inputs directory. The supplied assets have
+  // an additional .txt suffix, so accept either .obj or .obj.txt.
+  size_t separator = scene_filename.find_last_of("/\\");
+  std::string mesh_path = separator == std::string::npos
+    ? "../meshes/" : scene_filename.substr(0, separator + 1) + "../meshes/";
+  mesh_path += filename;
   // read it once, get counts
-  FILE *file = fopen(filename,"r");
+  FILE *file = fopen(mesh_path.c_str(),"r");
+  if (file == NULL) {
+    mesh_path += ".txt";
+    file = fopen(mesh_path.c_str(),"r");
+  }
   assert (file != NULL);
   int vcount = 0; int fcount = 0;
   while (1) {
@@ -376,7 +387,7 @@ Group* SceneParser::parseTriangleMesh() {
   Vec3f *verts = new Vec3f[vcount];
   Group *answer = new Group(fcount);
   // read it again, save it
-  file = fopen(filename,"r");
+  file = fopen(mesh_path.c_str(),"r");
   assert (file != NULL);
   int new_vcount = 0; int new_fcount = 0;
   while (1) {

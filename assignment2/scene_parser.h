@@ -3,6 +3,7 @@
 
 #include "vectors.h"
 #include <assert.h>
+#include <string>
 
 class Camera;
 class Light;
@@ -73,6 +74,7 @@ private:
   // ==============
   // REPRESENTATION
   FILE *file;
+  std::string scene_filename;
   Camera *camera;
   Vec3f background_color;
   Vec3f ambient_light;

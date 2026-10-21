@@ -27,4 +27,20 @@ private:
     float size;
 };
 
+class PerspectiveCamera : public Camera
+{
+public:
+    PerspectiveCamera(const Vec3f& center, const Vec3f& direction, const Vec3f& up, float angle);
+
+    Ray generateRay(Vec2f point);
+    float getTMin() const;
+
+private:
+    Vec3f center;
+    Vec3f direction;
+    Vec3f up;
+    Vec3f horizontal;
+    float angle;
+};
+
 #endif

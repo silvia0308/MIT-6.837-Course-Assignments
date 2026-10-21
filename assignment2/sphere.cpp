@@ -21,7 +21,9 @@ bool Sphere::intersect(const Ray& r, Hit& h, float tmin) {
         if (t < tmin) return false;
     }
     if (t < h.getT()) {
-        h.set(t, material, r);
+        Vec3f normal = r.pointAtParameter(t) - center;
+        normal.Normalize();
+        h.set(t, material, normal, r);
         return true;
     }
     return false;

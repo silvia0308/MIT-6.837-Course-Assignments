@@ -59,8 +59,8 @@ int main(int argc, char *argv[])
     assert(width > 0 && height > 0);
     assert(depth_file == NULL || depth_min < depth_max);
 
-    const std::string input_dir_prefix = "../inputs/";
-    const std::string output_dir_prefix = "../outputs/";
+    const std::string input_dir_prefix = "../../inputs/";
+    const std::string output_dir_prefix = "../../outputs/";
 
     std::string input_path = input_dir_prefix + input_file;
     std::string output_path = output_dir_prefix + output_file;
