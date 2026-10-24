@@ -1,0 +1,4 @@
+C:/Users/silvi/Desktop/MIT-6.837-Course-Assignments/assignment3/third_party/freeglut-build-x86/CMakeFiles/freeglut_static.dir
+C:/Users/silvi/Desktop/MIT-6.837-Course-Assignments/assignment3/third_party/freeglut-build-x86/CMakeFiles/INSTALL.dir
+C:/Users/silvi/Desktop/MIT-6.837-Course-Assignments/assignment3/third_party/freeglut-build-x86/CMakeFiles/ALL_BUILD.dir
+C:/Users/silvi/Desktop/MIT-6.837-Course-Assignments/assignment3/third_party/freeglut-build-x86/CMakeFiles/ZERO_CHECK.dir
