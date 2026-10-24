@@ -27,7 +27,7 @@
     <ClCompile Include="..\group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\orthographic_camera.cpp">
+    <ClCompile Include="..\camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\main.cpp">
